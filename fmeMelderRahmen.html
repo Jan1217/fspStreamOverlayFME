@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Overlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!-- Google Fonts Link -->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Hintergrundfarbe */
+            position: relative;
+        }
+
+        .overlay-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .overlay {
+            width: 178px;
+            height: 243px;
+            border: 10px solid red; /* Breiterer roter Rahmen */
+            border-radius: 0 0 0 30px; /* Abgerundete Ecke unten rechts */
+        }
+
+        .animated-text {
+            position: absolute;
+            top: -40px; /* Text über dem Rahmen */
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            white-space: nowrap;
+            font-family: 'Anton', sans-serif; /* Die Google-Schriftart */
+            letter-spacing: 2px; /* Vergrößerter Abstand zwischen den Zeichen */
+            animation: moveText 70s ease-in-out infinite; /* Endlose Animation */
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            1.5% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            14.5% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            16% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="animated-text">FME Melder</div>
+        <div class="overlay"></div>
+    </div>
+</body>
+</html>
